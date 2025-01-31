@@ -7,11 +7,14 @@ from google.cloud import monitoring_v3
 from google.cloud import resourcemanager_v3
 from google.protobuf.duration_pb2 import Duration
 import time
+import more_itertools
 
 client = monitoring_v3.MetricServiceClient()
 resource_manager_client = resourcemanager_v3.ProjectsClient()
 query_model = "gemini"
 
+# Initialize an empty list to hold the table rows
+table_rows = []
 
 def get_all_projects():
     # Initialize request argument(s)
@@ -75,10 +78,9 @@ def project_loop(project_id):
         print(f"Error querying project {project_id}: {e}")
 
 def main():
-    # Initialize an empty list to hold the table rows
-    table_rows = []
-
     projects = get_all_projects()
+    print("[INFO] Total number of identified projects: ", more_itertools.ilen(projects))
+    print("\n\n")
     for project in projects:
         project_loop(project.project_id)
 
