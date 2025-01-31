@@ -1,6 +1,7 @@
 # Requirements
 ## pip install google-cloud-monitoring
 ## pip install google-cloud-resource-manager
+## pip install more-itertools
 
 #Project details
 from google.cloud import monitoring_v3
@@ -11,6 +12,7 @@ import more_itertools
 
 client = monitoring_v3.MetricServiceClient()
 resource_manager_client = resourcemanager_v3.ProjectsClient()
+# Update the query for the model_user_id you are interested in
 query_model = "gemini"
 
 # Initialize an empty list to hold the table rows
@@ -80,7 +82,7 @@ def project_loop(project_id):
 def main():
     projects = get_all_projects()
     print("[INFO] Total number of identified projects: ", more_itertools.ilen(projects))
-    print("\n\n")
+    print("\n")
     for project in projects:
         project_loop(project.project_id)
 
