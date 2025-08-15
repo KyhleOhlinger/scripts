@@ -1,2 +1,4 @@
-# gcp-scripts
-Random GCP scripts that I have created while learning more about the CSP.
+# Scripts
+
+Assortment of scripts that I have created.
+
