@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart AI Query Helper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 Smart AI Query Helper</h1>
+        </header>
+        
+        <main>
+            <form id="questionForm">
+                <div class="input-group">
+                    <label for="question">Your Question:</label>
+                    <textarea 
+                        id="question" 
+                        placeholder="Ask anything..."
+                        rows="4"
+                        required
+                    ></textarea>
+                </div>
+                
+                <div class="platform-selection">
+                    <label>Choose AI Platform:</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="platform" value="chatgpt" checked>
+                            <span class="radio-label">
+                                <span class="platform-icon">🤖</span>
+                                ChatGPT
+                            </span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="platform" value="gemini">
+                            <span class="radio-label">
+                                <span class="platform-icon">✨</span>
+                                Gemini
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    Send Question
+                </button>
+            </form>
+        </main>
+        
+        <footer>
+            <p class="note">Opens AI platform in new tab with auto-filled question</p>
+        </footer>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
